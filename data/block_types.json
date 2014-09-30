@@ -1,0 +1,102 @@
+{
+    "heading"           : {
+        "label"     : "Heading",
+        "fields"    : {
+            "head" : {
+                "label"         : "Heading",
+                "required"      : true,
+                "field_type"    : "inline_plain_linkable"
+            },
+            "subHead" : {
+                "label"         : "Sub-Heading",
+                "required"      : false,
+                "field_type"    : "inline_plain_linkable"
+            }
+        }
+    },
+    "paragraph"         : {
+        "label"     : "Paragraph",
+        "fields"    : {
+            "body" : {
+                "label"         : "Body",
+                "required"      : true,
+                "field_type"    : "inline_rich_linkable"
+            }
+        }
+    },
+    "figure"             : {
+        "label"     : "Figure",
+        "fields"    : {
+            "image"     : {
+                "label"         : "Image",
+                "required"      : true,
+                "field_type"    : "embedded_image"
+            },
+            "caption"   : { // The image service should return a caption, this should allow it to be overridden.
+                "label"         : "Caption",
+                "required"      : false,
+                "field_type"    : "inline_plain"
+            },
+            "attribution"   : { // The image service should return a attribution
+                "label"         : "Attribution",
+                "required"      : false,
+                "field_type"    : "inline_plain_linkable"
+            },
+            "url"   : {
+                "label"         : "Link",
+                "required"      : false,
+                "field_type"    : "url"
+            }
+        }
+    },
+    "media"             : {
+        "label"     : "Media",
+        "fields"    : {
+            "image"     : {
+                "label"         : "Image",
+                "required"      : true,
+                "field_type"    : "embedded_image"
+            },
+            "url"   : {
+                "label"         : "Link",
+                "required"      : true,
+                "field_type"    : "url"
+            },
+            "title"     : {
+                "label"         : "Title",
+                "required"      : true,
+                "field_type"    : "inline_plain"
+            },
+            "caption"   : { // The image service should return a caption, this should allow it to be overridden.
+                "label"         : "Caption",
+                "required"      : false,
+                "field_type"    : "inline_plain"
+            },
+            "attribution"   : { // The image service should return a attribution
+                "label"         : "Attribution",
+                "required"      : false,
+                "field_type"    : "inline_plain_linkable"
+            },
+            "subtitle"     : {
+                "label"         : "Sub-Title",
+                "required"      : false,
+                "field_type"    : "inline_plain"
+            },
+            "body"     : {
+                "label"         : "Body",
+                "required"      : false,
+                "field_type"    : "inline_rich"
+            },
+            "linkText" : {
+                "label"         : "Link Text",
+                "required"      : false,
+                "field_type"    : "inline_plain"
+            }
+        }
+    },
+    "list"              : {},
+    "gallery"           : {},
+    "video_ooyala"      : {},
+    "video_youtube"     : {},
+    "product"           : {}
+}

@@ -1,0 +1,19 @@
+<figure class="sd-figure-image">
+    <a class="sd-figure-image-link" href="{{ block.fields.url.link.href }}">
+        {{ render_field(block.fields.image) }}
+    </a>
+    {%  if block.fields.caption or block.fields.attribution %}
+        <figcaption>
+            {%  if block.fields.caption or block.fields.attribution %}
+                <div class="sd-figure-attribution">
+                    {{ render_field(block.fields.attribution) }}
+                </div>
+            {% endif %}
+            {%  if block.fields.caption or block.fields.attribution %}
+                <div class="sd-figure-caption">
+                    {{ render_field(block.fields.caption) }}
+                </div>
+            {% endif %}
+        </figcaption>
+    {%  endif %}
+</figure>

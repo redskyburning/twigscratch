@@ -1,0 +1,330 @@
+{
+    "url"           : "foo.html",
+    "content_type"  : "page-structured",
+    "status"        : "published",
+    "pub_date"      : "timestamp",
+    "title"         : "Foo is the new black",
+    "meta"          : {
+        "description"   : "Foo is all the rage this year.",
+        "og:image"      : "foo.jpg",
+        "etc"           : "etc"
+    },
+    "sections"      : [
+        {
+            "meta"      : "stuff", // I'm sure there's info that goes here, not sure what now.
+            "blocks"    : [
+                {
+                    "block_type"    : "headline",
+                    // The meaning of isHero depends on the context. Here it signals that this headline is the primary heading for the section, and should be an h1 rather than an h2.
+                    "isHero"        : true,
+                    "fields"        : {
+                        "head"      : {
+                            "field_type"    : "inline_plain_linkable",
+                            "payload"  : [
+                                {
+                                    "link" : {},
+                                    "text"  : "This is a headline. It's type is inline_plain_linkable "
+                                },
+                                {
+                                    "link" : {
+                                        "internal"  : true,
+                                        "href"      : "/bar.html"
+                                    },
+                                    "text"  : "so it can have a link,"
+                                },
+                                {
+                                    "text"  : " but no other styling."
+                                }
+                            ]
+                        },
+                        "subHead"   : {
+                            "field_type"    : "inline_plain_linkable",
+                            "payload"  : [
+                                {
+                                    "link" : {},
+                                    "text"  : "I'm the subhead, i go below. Also inline_plain_linkable, so same rules."
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "block_type"    : "paragraph",
+                    "isHero"        : false,
+                    "fields"        : {
+                        "body"      : {
+                            "field_type"    : "inline_rich_linkable",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is a paragraph. It's type is inline_rich_linkable "
+                                },
+                                {
+                                    "link" : {
+                                        "internal"  : true,
+                                        "href"      : "/bar.html"
+                                    },
+                                    "text"  : "so it can have a link,"
+                                },
+                                {
+                                    "link" : {
+                                        "internal"  : true,
+                                        "href"      : "/fiz.html"
+                                    },
+                                    "style" : {
+                                        "strike"    : true
+                                    },
+                                    "text"  : "or a styled link,"
+                                },
+                                {
+                                    "text"  : " or styled spans like "
+                                },
+                                {
+                                    "style" : {
+                                        "bold"    : true
+                                    },
+                                    "text"  : "bold"
+                                },
+                                {
+                                    "style" : {
+                                        "italic"    : true
+                                    },
+                                    "text"  : "italic"
+                                },
+                                {
+                                    "style" : {
+                                        "strike"    : true
+                                    },
+                                    "text"  : "strikethrough"
+                                },
+                                {
+                                    "style" : {
+                                        "underline"    : true
+                                    },
+                                    "text"  : "underline"
+                                },
+                                {
+                                    "style" : {
+                                        "bold"      : true,
+                                        "underline" : true,
+                                        "strike"    : true,
+                                        "italic"    : true
+                                    },
+                                    "text"  : "or all of the above (note how underline trumps strikethrough)."
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "block_type"    : "media",
+                    "isHero"        : false,
+                    "fields"        : {
+                        "image"     : {
+                            "label"         : "Image",
+                            "required"      : true,
+                            "field_type"    : "embedded_image",
+                            "payload"       : {
+                                "internal"  : false,
+                                "src"       : "http://placekitten.com/560/400",
+                                "width"     : 560,
+                                "height"    : 400,
+                                "fX"        : 0.5,
+                                "fY"        : 0.5
+                            }
+                        },
+                        "url"   : {
+                            "label"         : "Link",
+                            "required"      : true,
+                            "field_type"    : "url",
+                            "link"  : {
+                                "internal"      : true,
+                                "href"          : "/bar.html"
+                            }
+                        },
+                        "title"     : {
+                            "label"         : "Title",
+                            "required"      : true,
+                            "field_type"    : "inline_plain",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is a title. It's type is inline_plain_linkable. No styles or links here."
+                                }
+                            ]
+                        },
+                        "caption"   : { // The image service should return a caption, this should allow it to be overridden.
+                            "label"         : "Caption",
+                            "required"      : false,
+                            "field_type"    : "inline_plain",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is a caption. It's type is inline_plain_linkable. No styles or links here."
+                                }
+                            ]
+                        },
+                        "attribution"   : { // The image service should return a attribution
+                            "label"         : "Attribution",
+                            "required"      : false,
+                            "field_type"    : "inline_plain_linkable",
+                            "payload"  : [
+                                {
+                                    "link" : {},
+                                    "text"  : "This is image attribution. It's type is inline_plain_linkable"
+                                },
+                                {
+                                    "link" : {
+                                        "internal"  : false,
+                                        "href"      : "www.photog.com"
+                                    },
+                                    "text"  : "so it can have a link to the photog's site"
+                                }
+                            ]
+                        },
+                        "subtitle"     : {
+                            "label"         : "Sub-Title",
+                            "required"      : false,
+                            "field_type"    : "inline_plain",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is a subtitle. It's type is inline_plain. No styles or links here."
+                                }
+                            ]
+                        },
+                        "body"     : {
+                            "label"         : "Body",
+                            "required"      : false,
+                            "field_type"    : "inline_rich",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is the body. It's type is inline_rich, so it can have styled spans like "
+                                },
+                                {
+                                    "style" : {
+                                        "bold"    : true
+                                    },
+                                    "text"  : "bold"
+                                },
+                                {
+                                    "style" : {
+                                        "italic"    : true
+                                    },
+                                    "text"  : "italic"
+                                },
+                                {
+                                    "style" : {
+                                        "strike"    : true
+                                    },
+                                    "text"  : "strikethrough"
+                                },
+                                {
+                                    "style" : {
+                                        "underline"    : true
+                                    },
+                                    "text"  : "underline"
+                                },
+                                {
+                                    "style" : {
+                                        "bold"      : true,
+                                        "underline" : true,
+                                        "strike"    : true,
+                                        "italic"    : true
+                                    },
+                                    "text"  : "or all of the above (note how underline trumps strikethrough)."
+                                }
+                            ]
+                        },
+                        "linkText" : {
+                            "label"         : "Link Text",
+                            "required"      : false,
+                            "field_type"    : "inline_plain",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is the link text, which is an optional spot for a call to action. It's type is inline_plain. No styles or links here."
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "block_type"    : "figure",
+                    "isHero"        : false,
+                    "fields"        : {
+                        "image"     : {
+                            "label"         : "Image",
+                            "required"      : true,
+                            "field_type"    : "embedded_image",
+                            "payload"       : {
+                                "internal"  : false,
+                                "src"       : "http://placekitten.com/560/400",
+                                "width"     : 560,
+                                "height"    : 400,
+                                "fX"        : 0.5,
+                                "fY"        : 0.5
+                            }
+                        },
+                        "url"   : {
+                            "label"         : "Link",
+                            "required"      : true,
+                            "field_type"    : "url",
+                            "link"  : {
+                                "internal"      : true,
+                                "href"          : "/bar.html"
+                            }
+                        },
+                        "caption"   : { // The image service should return a caption, this should allow it to be overridden.
+                            "label"         : "Caption",
+                            "required"      : false,
+                            "field_type"    : "inline_plain",
+                            "payload"  : [
+                                {
+                                    "text"  : "This is a caption. It's type is inline_plain_linkable. No styles or links here."
+                                }
+                            ]
+                        },
+                        "attribution"   : { // The image service should return a attribution
+                            "label"         : "Attribution",
+                            "required"      : false,
+                            "field_type"    : "inline_plain_linkable",
+                            "payload"  : [
+                                {
+                                    "link" : {},
+                                    "text"  : "This is image attribution. It's type is inline_plain_linkable"
+                                },
+                                {
+                                    "link" : {
+                                        "internal"  : false,
+                                        "href"      : "www.photog.com"
+                                    },
+                                    "text"  : "so it can have a link to the photog's site"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "modules"       : {
+        "you_might_also_like"   : {
+            "module_type"   : "product_array",
+            "meta_fields"       :   {
+                "title"         : "We think you'll also love",
+                "subtitle"      : null,
+                "description"   : null
+            },
+            "blocks"        : [
+                {
+                    "block_type"    : "product",
+                    "isHero"          : true, // The meaning of isHero depends on the context.
+                    "fields"        : {
+                        "embedded_product"  : {
+
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "taxonomy"      : {
+
+    }
+}

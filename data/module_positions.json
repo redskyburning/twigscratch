@@ -1,0 +1,12 @@
+{
+    "ymal"  : {
+        "module_type"       : "product_array",
+        "title"             : "You might also like",
+        "min_blocks"        : 4,
+        "max_blocks"        : 4,
+        "content_types"     : [
+            "page-structured",
+            "category-product"
+        ]
+    }
+}

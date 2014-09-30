@@ -1,0 +1,25 @@
+<style>
+    .style-bold {
+        font-weight:bold;
+    }
+
+    .style-italic {
+        font-style:italic;
+    }
+
+    .style-strike {
+        text-decoration:line-through;
+    }
+
+    .style-underline {
+        text-decoration:underline;
+    }
+</style>
+
+{% for section in data.sections %}
+    <section>
+        {%  for block in section.blocks %}
+            {{ render_block(block) }}
+        {% endfor %}
+    </section>
+{% endfor %}

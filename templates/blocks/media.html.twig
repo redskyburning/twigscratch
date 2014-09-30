@@ -1,0 +1,48 @@
+<div class="sd-media">
+    <figure class="sd-media-image">
+        <a class="sd-media-image-link" href="{{ block.fields.url.link.href }}">
+            {{ render_field(block.fields.image) }}
+        </a>
+        {%  if block.fields.caption or block.fields.attribution %}
+            <figcaption>
+                {%  if block.fields.caption or block.fields.attribution %}
+                    <div class="sd-media-attribution">
+                        {{ render_field(block.fields.attribution) }}
+                    </div>
+                {% endif %}
+                {%  if block.fields.caption or block.fields.attribution %}
+                    <div class="sd-media-caption">
+                        {{ render_field(block.fields.caption) }}
+                    </div>
+                {% endif %}
+            </figcaption>
+        {%  endif %}
+    </figure>
+    <div class="sd-media-text">
+        <div class="sd-media-text-title">
+            <a class="sd-media-image-link" href="{{ block.fields.url.link.href }}">
+                {{ render_field(block.fields.title) }}
+            </a>
+        </div>
+
+        {% if block.fields.subtitle %}
+            <div class="sd-media-text-title">
+                {{ render_field(block.fields.subtitle) }}
+            </div>
+        {%  endif %}
+
+        {% if block.fields.body %}
+            <div class="sd-media-text-body">
+                {{ render_field(block.fields.body) }}
+            </div>
+        {%  endif %}
+
+        {% if block.fields.linkText %}
+            <div class="sd-media-text-link">
+                <a class="sd-media-image-link" href="{{ block.fields.url.link.href }}">
+                    {{ render_field(block.fields.linkText) }}
+                </a>
+            </div>
+        {%  endif %}
+    </div>
+</div>

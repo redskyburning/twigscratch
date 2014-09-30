@@ -1,0 +1,30 @@
+{
+    "product_array" : {
+        "label"         : "Product Array",
+        "min_blocks"    : 1,
+        "max_blocks"    : false, // You should be able to alter the min/max at the position level.
+        "meta_fields"   : [
+            {
+                "name"          : "title",
+                "label"         : "Title",
+                "required"      : true,
+                "field_type"    : "inline"
+            },
+            {
+                "name"          : "subtitle",
+                "label"         : "SubTitle",
+                "required"      : false,
+                "field_type"    : "inline"
+            },
+            {
+                "name"          : "desc",
+                "label"         : "Description",
+                "required"      : false,
+                "field_type"    : "inline"
+            }
+        ],
+        "accepted_block_types"    : [
+            "embedded_product"
+        ]
+    }
+}

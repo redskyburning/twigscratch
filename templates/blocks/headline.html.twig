@@ -1,0 +1,14 @@
+{%  if block.isHero %}
+    {%  set headTag = 'h1' %}
+    {%  set subTag = 'h2' %}
+{% else %}
+    {%  set headTag = 'h3' %}
+    {%  set subTag = 'h4' %}
+{% endif %}
+
+<hgroup>
+    <h1>{{ render_field(block.fields.head) }}</h1>
+    {% if block.fields.subHead %}
+        <h2>{{ render_field(block.fields.subHead) }}</h2>
+    {% endif %}
+</hgroup>
