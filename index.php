@@ -112,6 +112,8 @@
     ));
     $twig->addFunction($render_field);
 
+    $twig->addGlobal('asset_base_path','/twigscratch/');
+
     $type = !empty($_GET['type']) ? $_GET['type'] : 'page';
     $data = json_clean_decode(file_get_contents('data/' . $type . '_data.json'),true);
 

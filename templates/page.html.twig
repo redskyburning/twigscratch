@@ -1,25 +1,31 @@
-<style>
-    .style-bold {
-        font-weight:bold;
-    }
+{% extends 'base.html.twig' %}
 
-    .style-italic {
-        font-style:italic;
-    }
+{% block page_body %}
 
-    .style-strike {
-        text-decoration:line-through;
-    }
+    <style>
+        .style-bold {
+            font-weight:bold;
+        }
 
-    .style-underline {
-        text-decoration:underline;
-    }
-</style>
+        .style-italic {
+            font-style:italic;
+        }
 
-{% for section in data.sections %}
-    <section>
-        {%  for block in section.blocks %}
-            {{ render_block(block) }}
-        {% endfor %}
-    </section>
-{% endfor %}
+        .style-strike {
+            text-decoration:line-through;
+        }
+
+        .style-underline {
+            text-decoration:underline;
+        }
+    </style>
+
+    {% for section in data.sections %}
+        <section>
+            {%  for block in section.blocks %}
+                {{ render_block(block) }}
+            {% endfor %}
+        </section>
+    {% endfor %}
+
+{%  endblock %}
